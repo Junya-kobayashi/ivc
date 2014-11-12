@@ -17,6 +17,18 @@ cross fade: straße
 * die beiden gehen/schweben weiter
 
 cross fade: im tante emma laden
-    
+* hipster packt obst und milch in seinen korb
+* geht an die kasse und stellt sich in die schlange
+* typ fragt: "was machst du da?"
+kamerafahrt die schlange entlangt dreht sich zum hipster:
+* hipster sagt: "schlange stehen! hast du wahrscheinlich noch nie was von gehört"
+
+cross fade: butze vom hipster
+* geschlossener kühlschrank 
+* hipster macht ihn auf, obst und milch drin
+* hipster sagt: "ich wollte vollmilch und keine h-milch"
+
+fade out: ende gelände, feierabend, affetot klappe zu:
+* hipster sagt noch: "scheiß bug"
 
 TODO: szene für wilhelm scream
