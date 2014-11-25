@@ -31,4 +31,4 @@ cross fade: butze vom hipster
 fade out: ende gelände, feierabend, affetot klappe zu:
 * hipster sagt noch: "scheiß bug"
 
-TODO: szene für wilhelm scream
+TODO: szene für wilhelm scream!
