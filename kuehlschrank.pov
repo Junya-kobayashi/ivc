@@ -17,8 +17,20 @@ camera{ location  <0.0 , 10 ,-30>
 // sun -------------------------------------
 light_source{<1500,3000,-2500> color White}
 
+
+#declare fach = 
+ // Round_Box Fach
+object{
+ Round_Box(<0,0,0>,<9.5,0.1,9.8>, 0.125, 0)
+ texture{
+   	pigment{ color White}
+   	finish { phong 1}
+	}
+}
+
 #declare kuehlschrank = 
 // -----------------------------------
+union {
 difference
 {
  // Round_Box(A, B, WireRadius, Merge)
@@ -38,21 +50,45 @@ object{
    	finish { phong 1}
 	} // end of texture
  	scale<0.95,0.95,0.95>
+
 }
+
 }
- // Round_Box TUER
+
+ // Round_Box Fach
 object{
- Round_Box(<0,0.8,0>,<9,19,2>, 0.125, 0)
+	fach
+	translate<0.25,5,0.2>
+}
+
+object{
+	fach
+	translate<0.25,10,0.2>
+}
+
+object{
+ Round_Box(<0,0,0>,<9.5,5,9.8>, 0.125, 0)
  texture{
    	pigment{ color White}
    	finish { phong 1}
-	} // end of texture
- 	scale<1,1,1>
-	rotate<0,-180,0>
+	}
+translate<0.25,15,0.2>
+
 }
 
-
+ // Round_Box TUER
+object{
+ Round_Box(<0,0,0>,<10,19,-0.5>, 0.125, 0)
+ texture{
+   	pigment{ color White}
+   	finish { phong 1}
+	}
+	rotate<0,90,0>
+	translate<0,0.5,0>
+}
+}
 
 object {
 	kuehlschrank
+	rotate<0,0,0>
 }
