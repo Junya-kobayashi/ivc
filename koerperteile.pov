@@ -1,3 +1,5 @@
+#include "colors.inc"
+
 #declare finger = 
 union {
     cone {
