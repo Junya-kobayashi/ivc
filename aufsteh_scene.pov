@@ -11,12 +11,11 @@ camera{
 }
 
 
-
 #declare hipster1 = 
 spline {
 	linear_spline
-	0.0 <11,4,8>
-	1.0 <11,4,8>
+	0.0 <11,4.3,8>
+	1.0 <11,4.3,8>
 	1.00001 <11,-20,8>
 }
 
@@ -37,6 +36,11 @@ spline {
 	4.0 <0,-225,0>
 	5.0 <0,-180,0>
 }
+
+object {
+	wohnung
+}
+
 object {
 	hipster_aufstehen
 	rotate<0,180,0>

@@ -110,7 +110,11 @@ object {
 	bild
 	translate<30,5,49.99>
 }
-
+object {
+	bild
+	rotate<0,90,0>
+	translate<0.01,5,25>
+}
 object {
 	lampe
 	translate<20,22,20>
