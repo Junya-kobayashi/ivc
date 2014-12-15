@@ -8,11 +8,11 @@ global_settings{assumed_gamma 1.0}
 
 
 #include "kuehlschrank.pov"
+#include "bett.pov"
 //------------------------------------------
 // camera ----------------------------------
 camera{ location  <40 ,20 ,0>
-        //look_at   <20 , 20 ,50>
-        look_at <0,10,45>
+        look_at   <0 , 10 ,45>
         right x*image_width/image_height
         angle 90 }
 // sun -------------------------------------
@@ -88,6 +88,11 @@ object{
 kuehlschrank
 translate<2,0,50>
 scale<0.8,0.8,0.8>
+}
+
+object{
+bett
+translate<0,0,0>
 }
 
 
