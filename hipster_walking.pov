@@ -1,13 +1,13 @@
 #include "colors.inc"
 #include "koerperteile.pov"
 
-camera {
+/*camera {
     location <0,20,-40>
     look_at <0,8,0>
     angle 40
 }
 light_source { < 10,30,-30> color White }
-
+*/
 #declare hipster_walking = 
 union {
     //head
@@ -79,10 +79,4 @@ union {
     rotate <20*sin(clock*2*pi),0,0>
     translate <1,8,0>
 }
-}
-
-object { 
-    hipster_walking
-    rotate <0,-00,0>
-    translate<0,0,clock*-10>
 }
