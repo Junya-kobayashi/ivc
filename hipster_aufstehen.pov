@@ -21,9 +21,10 @@ spline {
 }
 #declare koerper_trans =
 spline {
-	natural_spline
+	linear_spline
 	0.0 <0,0,0>
 	0.75 <0,0,0>
+	0.875 <0,-1,-2>
 	1.0 <0,-4,-4>
 }
 
