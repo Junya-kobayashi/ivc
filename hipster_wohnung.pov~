@@ -6,10 +6,11 @@ global_settings{assumed_gamma 1.0}
 #include "textures.inc"
 #include "shapes.inc"
 #include "kuehlschrank.pov"
+#include "bett.pov"
 //------------------------------------------
 // camera ----------------------------------
-camera{ location  <20 ,20 ,0>
-        look_at   <20 , 20 ,50>
+camera{ location  <50 ,20 ,0>
+        look_at   <0 , 10 ,45>
         right x*image_width/image_height
         angle 75 }
 // sun -------------------------------------
@@ -30,10 +31,10 @@ box { <0,0,0>, <8,14,0>
 			{ 
 			gif "poster.gif"
 			map_type 0
-			scale<8,14,0>
                         }
-                 }
-}
+			scale<8,14,0>
+                  }
+	}
 }
 
 #declare tuer = 
@@ -83,6 +84,11 @@ object{
 kuehlschrank
 translate<2,0,50>
 scale<0.8,0.8,0.8>
+}
+
+object{
+bett
+translate<12,0,0>
 }
 
 
