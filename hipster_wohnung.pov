@@ -5,10 +5,11 @@ global_settings{assumed_gamma 1.0}
 #include "colors.inc"
 #include "textures.inc"
 #include "shapes.inc"
+#include "kuehlschrank.pov"
 //------------------------------------------
 // camera ----------------------------------
-camera{ location  <20 ,20 ,40>
-        look_at   <20 , 20 , 0>
+camera{ location  <20 ,20 ,0>
+        look_at   <20 , 20 ,50>
         right x*image_width/image_height
         angle 75 }
 // sun -------------------------------------
@@ -16,32 +17,72 @@ light_source{<20,20,20> color White}
 
 
 #declare fenster = 
- // Round_Box Fenster
-object{
- Round_Box(<0,0,0>,<20,20,20>, 0.125, 0)
+box { <0,0,0>, <8,10,0>
  texture{
    	pigment{ color White}
    	finish { phong 1}
 	}
-  translate<0,0,30>
+}
+
+#declare bild = 
+box { <0,0,0>, <8,14,0>
+ texture{ pigment { image_map
+			{ 
+			gif "poster.gif"
+			map_type 0
+                        }
+			scale<8,14,0>
+                  }
+	}
+}
+
+#declare tuer = 
+box { <0,0,0>, <12,18,0>
+ texture{
+   	pigment{ color White}
+   	finish { phong 1}
+	}
 }
 
 #declare raum = 
-box{ <0,0,0>, <40,30,40>
-     pigment{ checker
-              color rgb<1,1,1>
-              color rgb<1,1,1>*0
-              scale <0.5,0.25,0.5> }
+box{ <0,0,0>, <50,30,50>
+     pigment{ color White }
    }
 
+union{
 difference {
 object {
 	raum
-	rotate<0.0,0>
 }
-
+//FUCK WIESO 2X
 object {
 	fenster
-	rotate<0,0,0>
+	translate<15,10,50>
+}
+object {
+	fenster
+	translate<15,10,50>
+}
+object {
+	tuer
+	rotate<0,90,0>
+	translate<50,0,50>
+}
+object {
+	tuer
+	rotate<0,90,0>
+	translate<50,0,45>
 }
 }
+object {
+	bild
+	translate<30,5,49.9>
+}
+}
+object{
+kuehlschrank
+translate<2,0,50>
+scale<0.8,0.8,0.8>
+}
+
+
