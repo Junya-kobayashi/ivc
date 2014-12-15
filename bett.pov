@@ -7,7 +7,7 @@ union
 {
 //Bettgestell
 object{
-Wire_Box(<0,0,0>, <17,4,16>, 0.5, 0)
+Wire_Box(<0,0,0>, <17,3.5,16>, 0.5, 0)
  texture{
    	pigment{ color Brown}
    	finish { phong 1}
@@ -21,7 +21,7 @@ Round_Box(<0,0,0>, <16,4,15>, 0.5, 0)
    	pigment{ color White}
    	finish { phong 1}
 	}
-translate<0.5,0.5,0.5>
+translate<0.5,0,0.5>
 }
 }
 
