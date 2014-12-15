@@ -1,11 +1,11 @@
 #include "koerperteile.pov"
-camera {
+/*camera {
     location <30,30,-30>
     look_at <0,8,0>
     angle 40
 }
 light_source { < 10,30,-30> color White }
-
+*/
 #declare oberkoerper_spline =
 spline {
 	linear_spline
@@ -114,11 +114,7 @@ union {
 		}
 		translate <1,8,0>
 	}
-}
-
-object {
-	hipster_aufstehen
 	translate<0,-8,0>
 	rotate koerper_spline(clock)
-	
 }
+
