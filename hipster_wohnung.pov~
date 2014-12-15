@@ -13,6 +13,10 @@ camera{ location  <50 ,20 ,0>
         look_at   <0 , 10 ,45>
         right x*image_width/image_height
         angle 75 }
+
+#declare wohnung =
+union{
+
 // sun -------------------------------------
 light_source{<20,20,20> color White}
 
@@ -20,8 +24,32 @@ light_source{<20,20,20> color White}
 #declare fenster = 
 box { <0,0,0>, <8,10,0>
  texture{
-   	pigment{ color White}
-   	finish { phong 1}
+   	pigment{ rgbf<0.98,0.98,0.98,0.8>}
+  finish { diffuse 0.1
+           reflection 0.2
+           specular 0.8
+           roughness 0.0003
+           phong 1
+           phong_size 400}
+}
+
+#declare lampe =
+cone{ <0,5,0>,1, <0,0,0>,5 open
+      texture{ pigment{ color Black}
+               finish { phong 0.4 }
+             }
+}
+
+#declare teppich = 
+box { <0,0,0>, <20,0,25>
+ texture{ pigment { image_map
+			{ 
+			gif "teppich.gif"
+			map_type 0 //type für plane/box
+			//once //gif wird in der Fläche nicht wiederholt
+                        }
+			scale<0.02,0,0.025>
+                  }
 	}
 }
 
@@ -32,8 +60,15 @@ box { <0,0,0>, <8,14,0>
 			gif "poster.gif"
 			map_type 0
                         }
-			scale<8,14,0>
-                  }
+		}
+			finish { diffuse 0.1
+          			reflection 0.2
+           			specular 0.8
+           			roughness 0.0003
+           			phong 1
+           			phong_size 400}
+				scale<8,14,0>
+                  		}
 	}
 }
 
@@ -75,11 +110,23 @@ object {
 	translate<50,0,45>
 }
 }
+
 object {
 	bild
-	translate<30,5,49.9>
+	translate<30,5,49.99>
+}
+
+object {
+	lampe
+	translate<20,22,20>
+}
+
+object {
+teppich
+translate<20,0.01,10>
 }
 }
+
 object{
 kuehlschrank
 translate<2,0,50>
@@ -88,7 +135,9 @@ scale<0.8,0.8,0.8>
 
 object{
 bett
-translate<12,0,0>
 }
 
+}
 
+object{
+wohnung}
