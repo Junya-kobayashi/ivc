@@ -1,74 +1,69 @@
 #include "colors.inc"
+#include "koerperteile.pov"
+camera {
+    location <30,30,-30>
+    look_at <0,8,0>
+    angle 40
+}
+light_source { < 10,30,-30> color White }
 
 #declare hipster = 
 union {
     //head
-sphere { 0, 1
-    texture { pigment { White } }
-    translate<0,15,0> 
-    scale<1,1,1>
+	object {
+		kopf
+	}
+	object {
+		koerper
+	}
+	// rechter arm
+	union {
+		object {
+			oberarm_rechts
+		}
+		object {
+			unterarm
+			translate<0,-4,0>
+		}
+		translate <-2.5,14,0>
+    }
+    // linker arm
+    union {
+		object {
+			oberarm_links
+		}
+		object {
+			unterarm
+			translate<0,-4,0>
+		}
+		translate <2.5,14,0>
+	}
+	// rechts bein
+	union {
+		object {
+			oberschenkel
+		}
+		object {
+			unterschenkel
+			translate<0,-4,0>
+		}
+		translate <-1,8,0>
+	}
+	// linkes bein
+	union {
+		object {
+			oberschenkel
+		}
+		object {
+			unterschenkel
+			translate<0,-4,0>
+		}
+		translate <1,8,0>
+	}
 }
 
-// body
-cone { <0,10,0> 1.5,  <0,14,0>, 2
-    texture { pigment { White }}
-    scale <1,1,.5>
+object { 
+    hipster
+    rotate <0,-00,0>
+    translate<0,0,clock*-10>
 }
-cone { <0,8,0> 2, <0,10, 0>, 1.5
-    texture { pigment { White }}
-    scale<1,1,.5>
-}
-
-//arms
-cone { <-2.5,10,0>, .5, <-1.5,14,0> .5
-    texture { pigment { White }}
-}
-cone { <-2.5,7,0>, .4, <-2.5,10,0> .5
-    texture { pigment { White }}
-}
-cone { <2.5,10,0>, .5, <1.5,14,0> .5
-    texture { pigment { White }}
-}
-cone { <2.5,7,0>, .4, <2.5, 10, 0> .5
-    texture { pigment { White }}
-}
-
-//legs
-cone { <-1,4,0>, .6, <-1,8,0> .75
-    texture { pigment { White }}
- //   scale<1,1,.5>
-}
-cone { <-1,0,0>, .4, <-1,4,0> .6
-    texture { pigment { White }}
-}
-
-cone {<1,4,0>, .6, <1,8,0>, .75
-    texture { pigment { White }}
-}
-cone {<1,0,0>, .4, <1,4,0> .6
-    texture { pigment { White }}
-}
-
-// foots
-difference {
-sphere {<-1,0,-.3>, .5
-    texture { pigment { White }}
-    scale< 1,1,2>
-}
-box {<-2,0,-2>, <0,-5,1>
-    texture { pigment { White }}
-}
-}
-difference {
-sphere {<1,0,-.3>, .5
-    texture { pigment { White }}
-    scale<1,1,2>
-}
-
-box {<0,0,-2>, <2,-5,1>
-    texture { pigment { White }}
-}
-}
-}
-
-object { hipster }
