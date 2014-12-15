@@ -3,11 +3,12 @@
 #include "hipster_aufstehen.pov"
 #include "hipster_walking.pov"
 
-camera{ location  <40 ,15 ,0>
-        look_at   <0 , 10 ,45>
-        right x*image_width/image_height
-        angle 90 }
-// sun -------------------------------------
+camera{ 
+	location  <40 ,15 ,0>
+    look_at   <0 , 10 ,45>
+    right x*image_width/image_height // so wegen 16:9
+    angle 90 
+}
 
 
 

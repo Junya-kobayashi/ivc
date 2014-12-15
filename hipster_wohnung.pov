@@ -9,22 +9,9 @@ global_settings{assumed_gamma 1.0}
 
 #include "kuehlschrank.pov"
 #include "bett.pov"
-//------------------------------------------
-// camera ----------------------------------
-camera{ location  <40 ,20 ,0>
-        look_at   <0 , 10 ,45>
-        right x*image_width/image_height
-<<<<<<< HEAD
-        angle 75 }
 
 #declare wohnung =
 union{
-
-=======
-        angle 90 }
->>>>>>> 94c8a38504073fbeefc6d96e30e014b4fa8157ea
-// sun -------------------------------------
-light_source{<200,200,200> color White}
 
 // indoor light
 light_source{<20,20,20> color White}

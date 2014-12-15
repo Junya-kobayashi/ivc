@@ -34,7 +34,9 @@ plane{ <0,1,0>, 0
           normal { bumps 0.75 scale 0.015 }
           finish { phong 0.1 }
        } // end of texture
+       translate<0,-0.1,0>
      } // end of plane
+     
 //------------------------------------------
 
 light_source { <100,300,-300> color White }
