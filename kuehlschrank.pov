@@ -8,15 +8,6 @@ global_settings{assumed_gamma 1.0}
 #include "colors.inc"
 #include "textures.inc"
 #include "shapes.inc"
-//------------------------------------------
-// camera ----------------------------------
-camera{ location  <0.0 , 10 ,-30>
-        look_at   <0.0 , 10 , 0.0>
-        right x*image_width/image_height
-        angle 75 }
-// sun -------------------------------------
-light_source{<1500,3000,-2500> color White}
-
 
 #declare fach = 
  // Round_Box Fach
@@ -86,9 +77,4 @@ object{
 	rotate<0,90,0>
 	translate<0,0.5,0>
 }
-}
-
-object {
-	kuehlschrank
-	rotate<0,0,0>
 }
