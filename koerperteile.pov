@@ -153,12 +153,47 @@ union {
             translate<0,-4,0>
         }
 	}
-
+#declare HAUT = color rgb<1,0.65,0.50>;
+#declare LIPPEN = color rgb<1, 0.25, .1>;
 #declare kopf =
-sphere { 0, 1
-    texture { pigment { White } }
-    translate<0,15,0> 
-    scale<1,1,1>
+union {
+	sphere { 0, 1
+		texture { pigment { HAUT } }
+		translate<0,15,0> 
+		scale<1,1,1>
+	}
+	//nase
+	sphere { 0, .2
+		texture { pigment { HAUT }}
+		translate<0,15,-1>
+		scale<.5,1,1>
+	}
+	//augen
+	sphere { 0, .1
+		texture { pigment { White }}
+		scale<1.2,1,1>
+		translate<-.35,15.3,-.85>
+	}
+	sphere { 0, .05
+		texture { pigment { Blue }}
+		translate<-.355,15.3,-.91>
+		scale<1,1,1>
+		}
+	sphere { 0, .1
+		texture { pigment { White }}
+		scale<1.2,1,1>
+		translate<.35,15.3,-.85>
+	}
+	sphere { 0, .05
+		texture { pigment { Blue }}
+		translate<.355,15.3, -.91>
+	}
+	//mund
+	sphere { 0, .15
+		texture { pigment { LIPPEN  }}
+		translate<0,14.5,-.75>
+		scale<2,1,1>		
+	}
 }
 
 #declare koerper =
@@ -172,3 +207,16 @@ cone { <0,8,0> 2, <0,10, 0>, 1.5
     scale<1,1,.5>
 }
 }
+/*
+camera {
+    location <0,15,-10>
+    look_at <0,15,0>
+    angle 40
+}
+light_source { < 10,30,-30> color White }
+
+object {
+	kopf
+}
+
+*/

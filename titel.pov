@@ -87,7 +87,7 @@ text {
 }
 text {
         ttf "Walkway.ttf",
-        "IN FULL HD 60 FPS",
+        "IN FULL HD",
         5,
         0
         texture { pigment { White }}
@@ -99,7 +99,7 @@ text {
 
 text {
 	ttf "Walkway.ttf",
-	"DIGGA!",
+	"60 FPS",
 	10,
 	0
 	texture { pigment { White }}
