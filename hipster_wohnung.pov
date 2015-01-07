@@ -11,6 +11,7 @@ global_settings{assumed_gamma 1.0}
 #include "bett.pov"
 
 #declare wohnung =
+
 union{
 
 // indoor light
@@ -80,32 +81,6 @@ box{ <0,0,0>, <50,30,50>
      pigment{ color White }
    }
 
-union{
-difference {
-object {
-	raum
-}
-//FUCK WIESO 2X
-object {
-	fenster
-	translate<15,10,50>
-}
-object {
-	fenster
-	translate<15,10,50>
-}
-object {
-	tuer
-	rotate<0,90,0>
-	translate<50,0,50>
-}
-object {
-	tuer
-	rotate<0,90,0>
-	translate<50,0,45>
-}
-}
-
 object {
 	bild
 	translate<30,5,49.99>
@@ -136,6 +111,6 @@ object{
 bett
 }
 
-}
+
 
 

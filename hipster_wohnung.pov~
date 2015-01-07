@@ -5,21 +5,17 @@ global_settings{assumed_gamma 1.0}
 #include "colors.inc"
 #include "textures.inc"
 #include "shapes.inc"
+
+
 #include "kuehlschrank.pov"
 #include "bett.pov"
-//------------------------------------------
-// camera ----------------------------------
-camera{ location  <50 ,20 ,0>
-        look_at   <0 , 10 ,45>
-        right x*image_width/image_height
-        angle 75 }
 
 #declare wohnung =
+
 union{
 
-// sun -------------------------------------
+// indoor light
 light_source{<20,20,20> color White}
-
 
 #declare fenster = 
 box { <0,0,0>, <8,10,0>
@@ -85,37 +81,15 @@ box{ <0,0,0>, <50,30,50>
      pigment{ color White }
    }
 
-union{
-difference {
-object {
-	raum
-}
-//FUCK WIESO 2X
-object {
-	fenster
-	translate<15,10,50>
-}
-object {
-	fenster
-	translate<15,10,50>
-}
-object {
-	tuer
-	rotate<0,90,0>
-	translate<50,0,50>
-}
-object {
-	tuer
-	rotate<0,90,0>
-	translate<50,0,45>
-}
-}
-
 object {
 	bild
 	translate<30,5,49.99>
 }
-
+object {
+	bild
+	rotate<0,90,0>
+	translate<0.01,5,25>
+}
 object {
 	lampe
 	translate<20,22,20>
@@ -139,5 +113,4 @@ bett
 
 }
 
-object{
-wohnung}
+
