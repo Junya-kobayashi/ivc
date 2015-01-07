@@ -1,22 +1,25 @@
 #include "colors.inc"
 
+#declare HAUT = color rgb<1,0.65,0.50>;
+#declare LIPPEN = color rgb<1, 0.25, .1>;
+
 #declare finger = 
 union {
     cone {
         <0,.4,0>, .05, <0,.6,0>, .05
-        texture { pigment { White }}
+        texture { pigment { HAUT }}
     }
     cone {
         <0,.6,0>, .05, <0,.8,-0>, .05
-        texture { pigment { White }}
+        texture { pigment { HAUT }}
     }
     cone {
         <0,.8,0>, .05, <0,1,0>, .05
-        texture { pigment { White }}
+        texture { pigment { HAUT }}
     }
     sphere {
 		<0,1,0>, .05
-        texture { pigment { White }}
+        texture { pigment { HAUT }}
     }
 }
 
@@ -24,15 +27,15 @@ union {
 union {
     cone {
         <0,.4,0>, .05, <0,.55,0>, .05
-        texture { pigment { White }}
+        texture { pigment { HAUT }}
     }
     cone {
         <0,.55,0>, .05, <0,.7,0>, .05
-        texture { pigment { White }}
+        texture { pigment { HAUT }}
     }
     sphere {
         <0,.7,0>, .05
-        texture { pigment { White }}
+        texture { pigment { HAUT }}
     }
 }
 
@@ -40,7 +43,7 @@ union {
 union {
     sphere {
         0,.4
-        texture { pigment { White }}
+        texture { pigment { HAUT }}
         scale <.8,0,.2>
         translate<0,0,0>
     }
@@ -153,8 +156,7 @@ union {
             translate<0,-4,0>
         }
 	}
-#declare HAUT = color rgb<1,0.65,0.50>;
-#declare LIPPEN = color rgb<1, 0.25, .1>;
+	
 #declare kopf =
 union {
 	sphere { 0, 1
