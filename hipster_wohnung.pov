@@ -12,7 +12,7 @@ global_settings{assumed_gamma 1.0}
 
 #declare wohnung =
 
-union{
+union {
 
 // indoor light
 light_source{<20,20,20> color White}
@@ -99,7 +99,7 @@ object {
 teppich
 translate<20,0.01,10>
 }
-}
+
 
 object{
 kuehlschrank
@@ -111,6 +111,6 @@ object{
 bett
 }
 
-
+}
 
 

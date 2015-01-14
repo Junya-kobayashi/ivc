@@ -8,11 +8,6 @@ global_settings{assumed_gamma 1.0}
 
 #include "hipster_wohnung.pov"
 
-camera{ 
-	location  <25 ,20 ,20>
-    right x*image_width/image_height // so wegen 16:9
-    angle 90 
-}
 
 #declare Wall_Texture_Outside = 
       texture { pigment{ color White*1.1}
@@ -51,6 +46,9 @@ camera{
 #include "House_1_0.inc" 
 //-------------------------------------------------------------------------------------// 
 
+#declare wohnung =
+
+union {
 object{ wohnung }
 
 object{ House_1_0(  2.50, // Half_House_Width_X, // >= 2.00
@@ -66,8 +64,7 @@ object{ House_1_0(  2.50, // Half_House_Width_X, // >= 2.00
         scale <1,1,1>*10
         rotate<0,90,0> 
         translate<-25.00,0.00, 0.00>}
-
-
+}
 
 
 

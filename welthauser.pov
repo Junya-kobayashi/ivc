@@ -1,7 +1,7 @@
 #include "colors.inc"
 #include "textures.inc"
 
-#include "hipster_wohnung.pov"
+#include "hipster_haus.pov"
 
 #declare hip_wohnung =
 object {
@@ -87,7 +87,9 @@ object{ House_2_0(  2.50, // Half_House_Width_X, // >= 2.00
 #declare Tree_01 = object{ TREE double_illuminate hollow}
 //-------------------------------------------------------------
 #declare i = 2;
-/*#while (i < 7)
+#declare wald = 
+union {
+#while (i < 7)
 object{ Tree_01 
         scale  40
         rotate<0, 0,0>
@@ -100,7 +102,7 @@ object { Tree_01
 }
 #declare i = i+1;
 #end
-*/
+}
 
 
 #declare Wall_Texture_Outside = 
