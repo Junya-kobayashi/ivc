@@ -7,29 +7,29 @@ global_settings{assumed_gamma 1.0}
 #include "shapes.inc"
 
 camera
-{ 
+{
 	//location <130,20,20>
 	location  <50,50,-80>
    	right x*image_width/image_height // so wegen 16:9
 	//look_at <0,10,80>
 	look_at <50,10,80>
-    	angle 90 
+    	angle 90
 }
 
 #declare Tube_Length = 10;
 #declare Tube_End = 20;
-#declare Tube = 
+#declare Tube =
 
-union{ 
- cylinder{ < 0,0,0>,<Tube_End,0,0>, 0.025 
-           texture { Chrome_Metal } 
+union{
+ cylinder{ < 0,0,0>,<Tube_End,0,0>, 0.025
+           texture { Chrome_Metal }
            translate <0,0,0>
          } // end of cylinder  ------------------------------------
- cylinder{ <-Tube_End,0,0>,<0.00,0,0>, 0.025 
-           texture { Chrome_Metal } 
+ cylinder{ <-Tube_End,0,0>,<0.00,0,0>, 0.025
+           texture { Chrome_Metal }
            translate <Tube_Length,0,0>
          } // end of cylinder  ------------------------------------
- cylinder{ <Tube_End,0,0>,<Tube_Length-Tube_End,0,0>, 0.3 
+ cylinder{ <Tube_End,0,0>,<Tube_Length-Tube_End,0,0>, 0.3
            texture { pigment { color rgb<1,1,1>}
                      finish  { ambient 0.8 diffuse 0.2 phong 1 reflection 0.25 }
                    } // end of texture
@@ -38,7 +38,7 @@ union{
 
 light_source{<100,200,30> color White}
 
-#declare licht = 
+#declare licht =
 light_source{ <0,0,0>
               color rgb<1,1,1>
               area_light
@@ -68,9 +68,9 @@ union
 {
 object
 {
-box{<0,0,0>, <15,1,70> pigment{color White} rotate <0,0,320> translate <0,13,5> 
+box{<0,0,0>, <15,1,70> pigment{color White} rotate <0,0,320> translate <0,13,5>
 		texture{ pigment { image_map
-			{ 
+			{
 			bmp "obst.bmp"
 			map_type 0 //type für plane/box
 			//once //gif wird in der Fläche nicht wiederholt
@@ -149,7 +149,7 @@ union
 	Tuer
 }
 
-#declare fronttuer =	
+#declare fronttuer =
 union
 {
 	object
@@ -191,24 +191,24 @@ object
 		box{<0,0,0>, <15,30,5> pigment{ color White }}
 		box{<0,0,0>, <15,30,5> pigment{ color White } translate<0,0,75>}
 		difference
-		{	
+		{
 			object
 			{
-			box 
+			box
 			{<0,0,0>, <150,30,80>
 		    		 pigment{ color White }
 			}
 			}
-			object 
-			{		
+			object
+			{
 			box
 			{<0,0,0>, <28,26,32>
 				translate<36,0.1,-31>
 				pigment{ color White }
 			}
 			}
-			object 
-			{		
+			object
+			{
 			box
 			{<0,0,0>, <28,26,32>
 				translate<36,0.1,-31>
@@ -218,24 +218,24 @@ object
 		}
 		difference
 		{
-			object 
-			{		
+			object
+			{
 			box
 			{<0,0,0>, <30,28,25>
 				translate<35,0,-25>
 				pigment{ color White }
 			}
 			}
-			object 
-			{		
+			object
+			{
 			box
 			{<0,0,0>, <28,26,27>
 				translate<36,-1,-25>
 				pigment{ color White }
 			}
 			}
-			object 
-			{		
+			object
+			{
 			box
 			{<0,0,0>, <28,26,27>
 				translate<36,-1,-26>
@@ -254,7 +254,7 @@ object
 	}
 
 
-object 
+object
 {
 	supermarkt
 }
@@ -284,16 +284,16 @@ object
 	translate<80,0,50>
 }
 
-object 
+object
 {
 	schrankmodul
 }
-object 
+object
 {
 	schrankmodul
 	translate<24,0,0>
 }
-object 
+object
 {
 	schrankmodul
 	translate<48,0,0>
