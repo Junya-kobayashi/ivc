@@ -5,6 +5,7 @@ global_settings{assumed_gamma 1.0}
 #include "colors.inc"
 #include "textures.inc"
 #include "shapes.inc"
+#include "rakete.pov"
 
 camera
 { 
@@ -70,12 +71,12 @@ union
 {
 object
 {
-box{<0,0,0>, <15,1,80> pigment{color White} rotate <0,0,320> translate <0,13,5> 
+box{<0,0,0>, <1,1,80> pigment{color White} rotate <0,0,320> translate <0,13,5> 
 		texture{ pigment { image_map
 			{ 
 			bmp "obst.bmp"
 			map_type 0 //type für plane/box
-			//once //gif wird in der Fläche nicht wiederholt
+			once //gif wird in der Fläche nicht wiederholt
                         }
 			scale<0.02,0,0.025>
                   }
@@ -319,7 +320,33 @@ object
 }
 }
 
+#declare raketen = 
+union
+{
+	object
+	{
+		rakete
+		scale<1,1,1>*10
+		translate<80,0,-15>
+	}
+	object
+	{
+		rakete
+		scale<1,1,1>*10
+		translate<105,0,-15>
+	}
+	object
+	{
+		rakete
+		scale<1,1,1>*10
+		translate<130,0,-15>
+	}
+}
+		
+
 #declare supermarkt =
+union
+{
 		//Traeger
 		box{<0,0,0>, <15,30,5> pigment{ color White }}
 		box{<0,0,0>, <15,30,5> pigment{ color White } translate<0,0,80>}
@@ -385,6 +412,22 @@ object
 		translate<68,0.1,-25>
 		pigment{ color White }
 	}
+	raketen
+	//SCHILD
+	box
+	{<0,0,0>, <1,1,1> pigment
+				{image_map
+					{ 
+					bmp "EDIGGA.bmp"
+					map_type 0 //type für plane/box
+					once //gif wird in der Fläche nicht wiederholt
+					} 
+				}
+	scale<22,8,0.1>	
+	translate<39,29,-22>}
+}
+
+
 #declare kassen =
 union
 {
