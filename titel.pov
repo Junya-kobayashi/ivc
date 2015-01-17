@@ -9,6 +9,7 @@ global_settings { charset utf8 }
 camera { 
 	    location <40,50,-200>
 		look_at <0,1,0>
+		right x*image_width/image_height
 		angle 75
 }
 // sky -------------------------------------
@@ -112,6 +113,13 @@ spline {
 	1.5 <0,320,0>
 	1.75 <0,0,0>
 }
+#declare wald_spline =
+spline {
+	linear_spline
+	0.0 <0,320,0>
+	1.6 <0,320,0>
+	1.85 <0,0,0>
+}
 
 text {
         ttf "Walkway.ttf",
@@ -158,4 +166,8 @@ object {
 object {
 	hip_wohnung
 	translate wohnung_spline(clock)
+}
+object {
+	wald
+	translate wald_spline(clock)
 }

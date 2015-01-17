@@ -20,13 +20,13 @@ plane{ <0,1,0>,1 hollow
         } // end of texture
        scale 10000}
 // fog on the ground -----------------------
-/*fog { fog_type   2
+fog { fog_type   2
       distance   50
       color      rgb<1,1,1>*0.8
       fog_offset 0.1
       fog_alt    1.5
       turbulence 1.8
-    }*/ //
+    } //
 // ground ----------------------------------
 plane{ <0,1,0>, 0
        texture{

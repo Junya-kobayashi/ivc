@@ -1,2 +1,2 @@
 file 'titel.mp4'
-file 'aufsteh_szene.mp4'
+file 'strasse.mp4'
