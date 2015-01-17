@@ -2,7 +2,6 @@
 #include "textures.inc"
 
 #include "hipster_haus.pov"
-#include "supermarkt.pov"
 
 #declare hip_wohnung =
 object {
@@ -152,10 +151,36 @@ object { Tree_01
 #include "House_35_0.inc" 
 //-------------------------------------------------------------------------------------// 
 #declare emma = 
-object {
-	supermarkt_komplett
-	translate <-35,0,-200>
-}
+object{ House_35_0( 2.30 , // Half_House_Width_X, // >= 2.00
+                    5.50 , // Total_House_Width_Z,// >= 2.00
+                    3.20 , // House_Height_Y,     // >= 2.00
+                    20   , // Roof___Angle, // ca. 10 ~ 60 degrees
+                    // door and windows open/closed  
+                    0.7, //Window_Open_Frontside_1, left: 0=closed  ~ 1=open 
+                    0.3, //Window_Open_Frontside_2,right: 0=closed  ~ 1=open 
+                    0.2, //Window_Open_Backside_1,  left: 0=closed  ~ 1=open 
+                    0.0, //Window_Open_Backside_2, right: 0=closed  ~ 1=open 
+                    0.0, //Window_Open_RightSide_1, back: 0=closed  ~ 1=open 
+                    0.2, //Door_Open_Rightside_1, middle: 0=closed  ~ 1=open 
+                    0.6, //Window_Open_RightSide_2,front: 0=closed  ~ 1=open 
+                    0.3, //Window_Open_LeftSide_1,  back: 0=closed  ~ 1=open 
+                    1.0, //Window_Open_LeftSide_2,middle: 0=closed  ~ 1=open 
+                    1.0, //Window_Open_LeftSide_3, front: 0=closed  ~ 1=open 
+                    // textures  
+                    Wall_Texture_Outside ,
+                    Wall_Texture_Inside  , 
+                    Window_Texture       ,
+                    Roof_Texture, 
+                    Base_Texture
+                   ) //----------------------------------------------------------------//
+        scale <1,1,1>*8
+        rotate<0,0,0> 
+        translate<-35.00,0.00, -150.00>}
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+
+
+
 
 #include "Street_10.inc"
 #declare strasse1 =
