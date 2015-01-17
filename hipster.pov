@@ -1,13 +1,14 @@
 #include "colors.inc"
 #include "koerperteile.pov"
-camera {
+/*camera {
     location <30,30,-30>
     look_at <0,8,0>
     angle 40
 }
 light_source { < 10,30,-30> color White }
+*/
 
-#declare hipster = 
+#declare hipster =
 union {
     //head
 	object {
@@ -60,10 +61,4 @@ union {
 		}
 		translate <1,8,0>
 	}
-}
-
-object { 
-    hipster
-    rotate <0,-00,0>
-    translate<0,0,clock*-10>
 }
