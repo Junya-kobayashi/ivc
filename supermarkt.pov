@@ -9,10 +9,12 @@ global_settings{assumed_gamma 1.0}
 camera
 { 
 	//location <130,20,20>
-	location  <50,50,-80>
-   	right x*image_width/image_height // so wegen 16:9
 	//look_at <0,10,80>
-	look_at <50,10,80>
+	location <80,20,40>
+	look_at <20,10,80>
+	//location  <50,50,-80>
+	//look_at <50,10,80>
+   	right x*image_width/image_height // so wegen 16:9
     	angle 90 
 }
 
@@ -68,7 +70,7 @@ union
 {
 object
 {
-box{<0,0,0>, <15,1,70> pigment{color White} rotate <0,0,320> translate <0,13,5> 
+box{<0,0,0>, <15,1,80> pigment{color White} rotate <0,0,320> translate <0,13,5> 
 		texture{ pigment { image_map
 			{ 
 			bmp "obst.bmp"
@@ -81,13 +83,62 @@ box{<0,0,0>, <15,1,70> pigment{color White} rotate <0,0,320> translate <0,13,5>
 }
 object
 {
-box{<0,0,0>, <15,5,70> pigment{color White} translate <0,25,5>}
+box{<0,0,0>, <15,5,75> pigment{color White} translate <0,25,5>}
 }
 object
 {
-box{<0,0,0>, <15,1,70> texture{Silver_Metal} rotate <0,0,40> translate <0,15,5>}
+box{<0,0,0>, <15,1,75> texture{Silver_Metal} rotate <0,0,40> translate <0,15,5>}
 }
-box{<0,0,0>, <15,5,70> pigment{color White} translate <0,0,5>}
+box{<0,0,0>, <15,5,75> pigment{color White} translate <0,0,5>}
+}
+
+#declare kasse =
+union
+{
+	box{<0,0,0>, <50,10,8> pigment{color White}}
+	box{<0,0,0>, <45,0.01,6> pigment{color Black} translate <2.5,10,1>}
+	box{<0,9,0>, <10,10,10> pigment{color White} translate <0,0,-10>}
+	box{<0,0,0>, <1,10,10> pigment{color White} translate <0,0,-10>}
+}
+
+//-------------------------------------------------------------------- optional texture
+/*
+#declare Railing_Texture_1 =
+         texture { Chrome_Metal
+                   // pigment{ color rgb< 1, 1, 1>*0.7 }  
+                   normal { bumps 0.25 scale 0.35 }
+                   finish { phong 0.3 }
+                 } // end of texture 
+*/
+//---------------------------------------------------------------------------------------
+#include "Railing_1.inc" 
+//-------------------------------------------------------------------------------------// 
+object{ Railing_1( 4.00,  // railing length in x // i.e. 5.00, 
+                   0.90,  // railing height in y // i.e. 1.00, 
+                   0.80,  // railing vertical ~distance // i.e. 1.00,
+                   0.025, // railing main radius   // i.e. 0.025, 
+                   4, // vertical subdivision  // integer, i.e. 0, 1, 2, ...
+                 ) //------------------------------------------------------------------//
+        scale <5,12,15>
+        rotate<0,90,0> 
+        translate<35,0, 20>}
+//---------------------------------------------------------------------------------------
+object{ Railing_1( 4.00,  // railing length in x // i.e. 5.00, 
+                   0.90,  // railing height in y // i.e. 1.00, 
+                   0.80,  // railing vertical ~distance // i.e. 1.00,
+                   0.025, // railing main radius   // i.e. 0.025, 
+                   4, // vertical subdivision  // integer, i.e. 0, 1, 2, ...
+                 ) //------------------------------------------------------------------//
+        scale <5,12,15>
+        rotate<0,0,0> 
+        translate<50,0, 18>}
+//---------------------------------------------------------------------------------------
+
+
+#declare drehkreuz =
+union
+{
+	
 }
 
 #declare schrank_mitte =
@@ -121,6 +172,71 @@ union
 	}
 }
 
+
+//--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+#declare Glass_D         = 0.002; 
+#declare Base_Height     = 0.25; 
+#declare Base_Half_Width = 0.12; 
+#declare Neck_Length     = 0.05;
+#declare Neck_Radius     = 0.03;
+#declare Fillet_Radius   = 0.10; 
+#declare Base_Border_Radius = 0.025; 
+//-------------------------------------------------------------------------------------// 
+#include "Erlenmeyer_Flask_1.inc" 
+//-------------------------------------------------------------------------------------// 
+#declare Flasche =
+object{ Erlenmeyer_Flask_1(  Glass_D, // 
+                             Base_Height, // Base_H, // 
+                             Base_Half_Width, // Base_Half_Width, //  
+                             Neck_Length, // Neck_Len, // 
+                             
+                             Neck_Radius, // Neck_R, // 
+                             Fillet_Radius, // Fillet_R, // 
+                             Base_Border_Radius, // Base_Border_R,//  
+                             
+                             1, // Merge_On, // 1 for transparent materials 
+                          ) //-------------------------
+ 
+        material{   //-----------------------------------------------------------
+         texture { pigment{ rgbf <0.5, 0.98, 0.98, 0.9> }
+                   normal { bumps 0.15 scale 0.03} 
+                   finish { diffuse 0.1 reflection 0.2  
+                            specular 0.8 roughness 0.0003 phong 1 phong_size 400}
+                 } // end of texture -------------------------------------------
+         interior{ ior 1.5 caustics 0.5
+                 } // end of interior ------------------------------------------
+        } // end of material ----------------------------------------------------
+
+
+        scale <1,1,1>*10
+        rotate<0,0,0> 
+        translate<0.00,0.0001, 0.00>}
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+
+#declare Flaschenreihe =
+union
+{
+	object
+	{
+		Flasche
+		translate<3,2,2.5>
+	}
+	object
+	{
+		Flasche
+		translate<6,2,2.5>
+	}
+	object
+	{
+		Flasche
+		translate<9,2,2.5>
+	}
+}
+
 #declare schrank =
 union
 {
@@ -146,6 +262,22 @@ union
 			translate<2,18,-1>
 		}
 	}
+//FASCHEN
+	object
+	{
+		Flaschenreihe
+	}
+	object
+	{
+		Flaschenreihe
+		translate<0,8,0>
+	}
+	object
+	{
+		Flaschenreihe
+		translate<0,16,0>
+	}
+
 	Tuer
 }
 
@@ -177,25 +309,25 @@ union
 object
 {
 	schrank
-	translate<15,0,75>
+	translate<15,0,80>
 }
 object
 {
 	schrank
-	translate<27,0,75>
+	translate<27,0,80>
 }
 }
 
 #declare supermarkt =
 		//Traeger
 		box{<0,0,0>, <15,30,5> pigment{ color White }}
-		box{<0,0,0>, <15,30,5> pigment{ color White } translate<0,0,75>}
+		box{<0,0,0>, <15,30,5> pigment{ color White } translate<0,0,80>}
 		difference
 		{	
 			object
 			{
 			box 
-			{<0,0,0>, <150,30,80>
+			{<0,0,0>, <150,30,90>
 		    		 pigment{ color White }
 			}
 			}
@@ -298,9 +430,32 @@ object
 	schrankmodul
 	translate<48,0,0>
 }
+object 
+{
+	schrankmodul
+	translate<72,0,0>
+}
 
+object
+{
+	kasse
+	translate<70,0,10>
+}
+object
+{
+	kasse
+	translate<80,0,35>
+}
+
+object
+{
+	drehkreuz
+}
+
+/*
 object
 {
 	schrank_mitte
 	translate<50,0,25>
 }
+*/
