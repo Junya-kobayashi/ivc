@@ -8,10 +8,10 @@ global_settings{assumed_gamma 1.0}
 
 camera
 {
-	//location <130,20,20>
-	//look_at <0,10,80>
-	location <80,20,40>
-	look_at <20,10,80>
+	location <130,20,20>
+	look_at <0,10,80>
+	//location <80,20,40>
+	//look_at <20,10,80>
 	//location  <50,50,-80>
 	//look_at <50,10,80>
 	right x*image_width/image_height // so wegen 16:9
@@ -187,6 +187,7 @@ object
 //-------------------------------------------------------------------------------------//
 #include "Erlenmeyer_Flask_1.inc"
 //-------------------------------------------------------------------------------------//
+#declare Rnd_1 = seed (1153);
 #declare Flasche =
 object{ Erlenmeyer_Flask_1(  Glass_D, //
 	Base_Height, // Base_H, //
@@ -201,7 +202,7 @@ object{ Erlenmeyer_Flask_1(  Glass_D, //
 	) //-------------------------
 
 	material{   //-----------------------------------------------------------
-		texture { pigment{ rgbf <0.5, 0.98, 0.98, 0.9> }
+		texture { pigment{ rgbf <0.9, 0.9, 0.9, 0.9> }
 		normal { bumps 0.15 scale 0.03}
 		finish { diffuse 0.1 reflection 0.2
 			specular 0.8 roughness 0.0003 phong 1 phong_size 400}
@@ -384,16 +385,23 @@ box
 	translate<68,0.1,-25>
 	pigment{ color White }
 }
-
-
+#declare kassen =
+union
+{
+	object
+{
+	kasse
+	translate<70,0,10>
+}
 object
 {
-	supermarkt
+	kasse
+	translate<80,0,35>
+}
 }
 
-object
-{
-	union
+#declare leuchtstoffroehren =
+union
 {
 	//	object{licht translate<10,26,40>}
 	//	object{licht translate<30,26,40>}
@@ -403,6 +411,18 @@ object
 	//	object{licht translate<110,26,40>}
 	//	object{licht translate<130,26,40>}
 }
+
+#declare supermarkt_komplett =
+union
+{
+	object
+{
+	supermarkt
+}
+
+object
+{
+	leuchtstoffroehren
 }
 
 object
@@ -438,24 +458,16 @@ object
 
 object
 {
-	kasse
-	translate<70,0,10>
-}
-object
-{
-	kasse
-	translate<80,0,35>
+	kassen
 }
 
 object
 {
 	drehkreuz
 }
+}
 
-/*
 object
 {
-schrank_mitte
-translate<50,0,25>
+	supermarkt_komplett
 }
-*/
