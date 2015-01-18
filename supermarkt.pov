@@ -5,8 +5,9 @@ global_settings{assumed_gamma 1.0}
 #include "colors.inc"
 #include "textures.inc"
 #include "shapes.inc"
+#include "rakete.pov"
 
-/*camera
+camera
 {
 	location <130,20,20>
 	look_at <0,10,80>
@@ -17,7 +18,7 @@ global_settings{assumed_gamma 1.0}
 	right x*image_width/image_height // so wegen 16:9
 	angle 90
 }
-*/
+
 #declare Tube_Length = 10;
 #declare Tube_End = 20;
 #declare Tube =
@@ -38,7 +39,7 @@ union{
 }
 }
 
-//light_source{<100,200,30> color White}
+light_source{<100,200,30> color White}
 
 #declare licht =
 light_source{ <0,0,0>
@@ -70,12 +71,12 @@ texture{
 {
 	object
 {
-	box{<0,0,0>, <15,1,80> pigment{color White} rotate <0,0,320> translate <0,13,5>
+	box{<0,0,0>, <1,1,80> pigment{color White} rotate <0,0,320> translate <0,13,5>
 	texture{ pigment { image_map
 	{
 		bmp "obst.bmp"
 		map_type 0 //type für plane/box
-		//once //gif wird in der Fläche nicht wiederholt
+		once //gif wird in der Fläche nicht wiederholt
 	}
 	scale<0.02,0,0.025>
 }
@@ -319,12 +320,37 @@ object
 }
 }
 
+#declare raketen =
+union
+{
+	object
+{
+	rakete
+	scale<1,1,1>*10
+	translate<80,0,-15>
+}
+object
+{
+	rakete
+	scale<1,1,1>*10
+	translate<105,0,-15>
+}
+object
+{
+	rakete
+	scale<1,1,1>*10
+	translate<130,0,-15>
+}
+}
+
+
 #declare supermarkt =
-union {
-//Traeger
-box{<0,0,0>, <15,30,5> pigment{ color White }}
-box{<0,0,0>, <15,30,5> pigment{ color White } translate<0,0,80>}
-difference
+union
+{
+	//Traeger
+	box{<0,0,0>, <15,30,5> pigment{ color White }}
+	box{<0,0,0>, <15,30,5> pigment{ color White } translate<0,0,80>}
+	difference
 {
 	object
 {
@@ -386,7 +412,22 @@ box
 	translate<68,0.1,-25>
 	pigment{ color White }
 }
+raketen
+//SCHILD
+box
+{<0,0,0>, <1,1,1> pigment
+{image_map
+{
+	bmp "EDIGGA.bmp"
+	map_type 0 //type für plane/box
+	once //gif wird in der Fläche nicht wiederholt
 }
+}
+scale<22,8,0.1>
+translate<39,29,-22>}
+}
+
+
 #declare kassen =
 union
 {
