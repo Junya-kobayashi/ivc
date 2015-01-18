@@ -1,9 +1,10 @@
 #include "colors.inc"
+#include "shapes3.inc"
 
 #declare HAUT = color rgb<1,0.65,0.50>;
 #declare LIPPEN = color rgb<1, 0.25, .1>;
 
-#declare finger = 
+#declare finger =
 union {
     cone {
         <0,.4,0>, .05, <0,.6,0>, .05
@@ -23,7 +24,7 @@ union {
     }
 }
 
-#declare daumen = 
+#declare daumen =
 union {
     cone {
         <0,.4,0>, .05, <0,.55,0>, .05
@@ -39,7 +40,7 @@ union {
     }
 }
 
-#declare hand = 
+#declare hand =
 union {
     sphere {
         0,.4
@@ -79,10 +80,10 @@ union {
     }
 }
 
-#declare oberarm_rechts = 
+#declare oberarm_rechts =
 union {
 	//oberarm
-	cone { 
+	cone {
         //<-2.5,10,0>, .5, <-1.5,14,0> .5
         <0,-4,0>, .4, <1,0,0>, .4
         texture { pigment { White }}
@@ -96,7 +97,7 @@ union {
 }
 #declare oberarm_links =
 union {
-	cone { 
+	cone {
 			<0,-4,0>, .4, <-1,0,0> .4
 			texture { pigment { White }}
     }
@@ -110,7 +111,7 @@ union {
 
 #declare unterarm =
 union {
-        cone { 
+        cone {
             <0,-2,-1>, .2, <0,-0,0>, .4
             texture { pigment { White }}
         }
@@ -119,12 +120,12 @@ union {
             rotate<0,-90,180>
             translate<0,-2,-1>
         }
-            
+
 }
 
 #declare oberschenkel =
 union {
-	cone { 
+	cone {
         <0,-4,0>, .6, <0,0,0> .75
         texture { pigment { White }}
     }
@@ -137,7 +138,7 @@ union {
 }
 #declare unterschenkel =
 union {
-        cone { 
+        cone {
             <0,-4,1>, .4, <0,0,0>, .6
             texture { pigment { White }}
         }
@@ -147,7 +148,7 @@ union {
                 <0,0,.2>, .5
                 texture { pigment { White }}
                 scale<1,1,2>
-            }   
+            }
             box {
                 <-1,0,-2>, <1,-1,2>
                 texture { pigment { White }}
@@ -156,12 +157,37 @@ union {
             translate<0,-4,0>
         }
 	}
-	
+
+#declare simpbobbel =
+union {
+object{ Pyramid_N( 6,
+  0.5,
+  0,
+  1.5
+  ) //------
+  texture { pigment { Green }}
+}
+object{ Pyramid_N( 6,
+  0.5,
+  0,
+  1.5
+  ) //------
+  texture { pigment { Green }}
+  rotate <0,0,180>
+}
+}
+
 #declare kopf =
 union {
+  object {
+    simpbobbel
+    rotate<0,clock*360,0>
+    translate<0,18,0>
+  }
+
 	sphere { 0, 1
 		texture { pigment { HAUT } }
-		translate<0,15,0> 
+		translate<0,15,0>
 		scale<1,1,1>
 	}
 	//nase
@@ -194,7 +220,7 @@ union {
 	sphere { 0, .15
 		texture { pigment { LIPPEN  }}
 		translate<0,14.5,-.75>
-		scale<2,1,1>		
+		scale<2,1,1>
 	}
 }
 

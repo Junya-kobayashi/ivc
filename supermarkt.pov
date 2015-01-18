@@ -6,7 +6,7 @@ global_settings{assumed_gamma 1.0}
 #include "textures.inc"
 #include "shapes.inc"
 
-camera
+/*camera
 {
 	location <130,20,20>
 	look_at <0,10,80>
@@ -17,7 +17,7 @@ camera
 	right x*image_width/image_height // so wegen 16:9
 	angle 90
 }
-
+*/
 #declare Tube_Length = 10;
 #declare Tube_End = 20;
 #declare Tube =
@@ -38,7 +38,7 @@ union{
 }
 }
 
-light_source{<100,200,30> color White}
+//light_source{<100,200,30> color White}
 
 #declare licht =
 light_source{ <0,0,0>
@@ -320,6 +320,7 @@ object
 }
 
 #declare supermarkt =
+union {
 //Traeger
 box{<0,0,0>, <15,30,5> pigment{ color White }}
 box{<0,0,0>, <15,30,5> pigment{ color White } translate<0,0,80>}
@@ -384,6 +385,7 @@ box
 {<0,0,0>, <80,0,23>
 	translate<68,0.1,-25>
 	pigment{ color White }
+}
 }
 #declare kassen =
 union
@@ -465,9 +467,4 @@ object
 {
 	drehkreuz
 }
-}
-
-object
-{
-	supermarkt_komplett
 }
