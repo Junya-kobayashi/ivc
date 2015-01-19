@@ -15,11 +15,11 @@ global_settings{assumed_gamma 1.0}
 #declare camfahrt =
 spline {
 	linear_spline
-	0.0 <40,50,-200>
+	0.0 <40,50,-300>
 	0.5 <0,10,-110>
 	1.0 <0,10,-20>
 }
-#declare camlook = 
+#declare camlook =
 spline {
 	linear_spline
 	0.0 <0,1,0>

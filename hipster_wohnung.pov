@@ -79,7 +79,7 @@ translate<20,0.01,10>
 object{
 kuehlschrank
 rotate<0,-45,0>
-translate<8,0,50>
+translate<10,0,50>
 scale<0.8,0.8,0.8>
 }
 

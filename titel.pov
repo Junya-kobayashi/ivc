@@ -6,8 +6,8 @@ global_settings { charset utf8 }
 
 //------------------------------------------
 // camera ----------------------------------
-camera { 
-	    location <40,50,-200>
+camera {
+	  location <40,50,-300>
 		look_at <0,1,0>
 		right x*image_width/image_height
 		angle 75
@@ -59,7 +59,7 @@ spline {
 	0.55 <-125,-32,-15>
 	0.75 <-125,-200,-15>
 }
-#declare text2_spline = 
+#declare text2_spline =
 spline {
 	linear_spline
 	0.0 <-105,320,-15>
@@ -70,7 +70,7 @@ spline {
 	1.0 <-105,-32,-15>
 }
 
-#declare strasse1_spline = 
+#declare strasse1_spline =
 spline {
 	linear_spline
 	0.0 <0,640,0>
@@ -85,14 +85,14 @@ spline {
 	1.0 <0,320,0>
 	1.25 <0,0,0>
 }
-#declare haus1_spline = 
+#declare haus1_spline =
 spline {
 	linear_spline
 	0.0 <0,320,0>
 	1.2 <0,320,0>
 	1.45 <0,0,0>
 }
-#declare haus2_spline = 
+#declare haus2_spline =
 spline {
 	linear_spline
 	0.0 <0,320,0>
@@ -128,7 +128,7 @@ text {
 		0
         texture { pigment { White }}
         scale <32,40,20>
-        
+
         translate text1_spline(clock)
         rotate <0,-25,0>
 }
@@ -139,14 +139,14 @@ text {
         0
         texture { pigment { White }}
         scale <32,40,20>
-        
+
         translate text2_spline(clock)
         rotate <0,-25,0>
 }
 object {
 	strasse1
 	translate strasse1_spline(clock)
-} 
+}
 object {
 	strasse2
 	translate strasse2_spline(clock)
