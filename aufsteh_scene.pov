@@ -3,7 +3,6 @@
 #include "hipster_aufstehen.pov"
 #include "hipster_walking.pov"
 
-
 camera{
 	 location  <50 ,20 ,0>
      look_at   <20 , 10 ,20>
