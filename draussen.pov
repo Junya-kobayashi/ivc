@@ -111,6 +111,7 @@ object {
 	translate hip1_stand(clock)
 }
 
+
 object {
 	hipster
 	rotate hip2_rotate(clock)
