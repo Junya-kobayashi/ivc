@@ -167,7 +167,7 @@ object {
 
 #declare strasse1 =
 object{ Street_10( 20,     // Street_Widthm, //
-				   1000, // Street_Length, //
+				   2000, // Street_Length, //
                    1,  // Stripes_Width, //
                    2.00,  // Stripes_Length
                  ) //------------------------------------------------------------------//
