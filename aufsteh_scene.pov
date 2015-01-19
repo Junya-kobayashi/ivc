@@ -4,11 +4,11 @@
 #include "hipster_walking.pov"
 
 camera{ 
-	 location  <20 ,10 ,0>
-     look_at   <0 , 10 ,10>
+	 location  <50 ,20 ,0>
+     look_at   <20 , 10 ,20>
 	//location  <0 ,15 ,-60>	
     right x*image_width/image_height // so wegen 16:9
-    angle 90 
+    angle 75
 }
 
 

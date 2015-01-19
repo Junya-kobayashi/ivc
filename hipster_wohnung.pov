@@ -7,33 +7,14 @@
 #include "kuehlschrank.pov"
 #include "bett.pov"
 
-#declare wohnung =
-
-union {
-
-// indoor light
-light_source{<20,20,20> color White}
-
-#declare fenster = 
-box { <0,0,0>, <8,10,0>
- texture{
-   	pigment{ rgbf<0.98,0.98,0.98,0.8>}
-  finish { diffuse 0.1
-           reflection 0.2
-           specular 0.8
-           roughness 0.0003
-           phong 1
-           phong_size 400}
-}
-
-#declare lampe =
+#local lampe =
 cone{ <0,5,0>,1, <0,0,0>,5 open
       texture{ pigment{ color Black}
                finish { phong 0.4 }
              }
 }
 
-#declare teppich = 
+#local teppich = 
 box { <0,0,0>, <20,0,25>
  texture{ pigment { image_map
 			{ 
@@ -46,7 +27,7 @@ box { <0,0,0>, <20,0,25>
 	}
 }
 
-#declare bild = 
+#local bild = 
 box { <0,0,0>, <8,14,0>
  texture{ pigment { image_map
 			{ 
@@ -63,24 +44,21 @@ box { <0,0,0>, <8,14,0>
 				scale<8,14,0>
                   		}
 	}
-}
 
-#declare tuer = 
-box { <0,0,0>, <12,18,0>
- texture{
-   	pigment{ color White}
-   	finish { phong 1}
-	}
-}
 
-#declare raum = 
-box{ <0,0,0>, <50,30,50>
-     pigment{ color White }
-   }
+
+#declare wohnung =
+
+union {
+
+// indoor light
+light_source{<20,20,20> color White}
+
+
 
 object {
 	bild
-	translate<30,5,49.99>
+	translate<20,5,54.49>
 }
 object {
 	bild
@@ -100,7 +78,8 @@ translate<20,0.01,10>
 
 object{
 kuehlschrank
-translate<2,0,50>
+rotate<0,-45,0>
+translate<8,0,50>
 scale<0.8,0.8,0.8>
 }
 
@@ -109,5 +88,6 @@ bett
 }
 
 }
+
 
 

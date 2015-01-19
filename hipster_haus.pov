@@ -58,9 +58,9 @@ object{ House_1_0(  2.50, // Half_House_Width_X, // >= 2.00
                     Window_Texture                                                    
                     Roof_Texture
                    ) //----------------------------------------------------------------//
-        scale <1,1,1>*10
-        rotate<0,90,0> 
-        translate<0.00,-5.00, 20.00>}
+        scale <13,11,11>
+        rotate<0,-90,0> 
+        translate<52.50,-3.30, 25.00>}
 }
 
 
