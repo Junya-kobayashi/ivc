@@ -7,7 +7,9 @@
 light_source { < 10,30,-30> color White }
 */
 
-#declare hipster =
+
+#macro hipster (HEMD, UNTERARM, HOSE)
+
 union {
     //head
 	object {
@@ -20,9 +22,11 @@ union {
 	union {
 		object {
 			oberarm_rechts
+			pigment { HEMD }
 		}
 		object {
 			unterarm
+			pigment { UNTERARM }
 			translate<0,-4,0>
 		}
 		translate <-2.5,14,0>
@@ -31,9 +35,11 @@ union {
     union {
 		object {
 			oberarm_links
+			pigment { HEMD }
 		}
 		object {
 			unterarm
+			pigment { UNTERARM }
 			translate<0,-4,0>
 		}
 		translate <2.5,14,0>
@@ -47,6 +53,7 @@ union {
 			unterschenkel
 			translate<0,-4,0>
 		}
+		pigment { HOSE }
 		translate <-1,8,0>
 	}
 	// linkes bein
@@ -58,6 +65,8 @@ union {
 			unterschenkel
 			translate<0,-4,0>
 		}
+		pigment { HOSE }
 		translate <1,8,0>
 	}
 }
+#end

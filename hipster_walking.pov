@@ -7,7 +7,7 @@
 }
 light_source { < 10,30,-30> color White }
 */
-#declare hipster_walking =
+#macro hipster_walking(HEMD, UNTERARM, HOSE)
 union {
     //head
 	object {
@@ -15,6 +15,7 @@ union {
 	}
 	object {
 		koerper
+		pigment { HEMD }
 	}
 // body
 
@@ -24,10 +25,12 @@ union {
     //oberarm
     object {
 		oberarm_rechts
+		pigment { HEMD }
 	}
     //unterarm
     object {
 		unterarm
+		pigment { UNTERARM }
 		rotate<20*sin(clock*2*pi),0,0>
         translate<0,-4,0>
 	}
@@ -38,10 +41,12 @@ union {
     //oberarm
     object {
 		oberarm_links
+		pigment { HEMD }
 	}
     //unterarm
     object {
 		unterarm
+			pigment { UNTERARM }
         rotate<-20*sin (clock*2*pi),0,0>
         translate<0,-4,0>
     }
@@ -61,6 +66,7 @@ union {
         rotate <-20*sin( clock*2*pi),0,0>
         translate <0,-4,0>
     }
+		pigment { HOSE }
     rotate <-20*sin( clock*2*pi),0,0>
     translate <-1,8,0>
 }
@@ -75,7 +81,9 @@ union {
         rotate<20*sin(clock*2*pi),0,0>
         translate<0,-4,0>
     }
+		pigment { HOSE }
     rotate <20*sin(clock*2*pi),0,0>
     translate <1,8,0>
 }
 }
+#end

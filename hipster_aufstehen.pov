@@ -12,7 +12,7 @@ spline {
 	0.0 <0,0,0>
 	0.25 <-90,0,0>
 }
-#declare koerper_spline = 
+#declare koerper_spline =
 spline {
 	linear_spline
 	0.0 <90,0,0>
@@ -44,25 +44,26 @@ spline {
 }
 
 
-#declare hipster_aufstehen =
+#macro hipster_aufstehen (HEMD, LANGHEMD, HOSE)
 union {
 	//head
 	union {
-		
 		object {
 			kopf
 		}
 		object {
 			koerper
-			
+			pigment { HEMD }
 		}
 		// rechter arm
 		union {
 			object {
 				oberarm_rechts
+				pigment { HEMD }
 			}
 			object {
 				unterarm
+				pigment { LANGHEMD }
 				translate<0,-4,0>
 			}
 			translate <-2.5,14,0>
@@ -71,9 +72,11 @@ union {
 		union {
 			object {
 				oberarm_links
+				pigment { HEMD }
 			}
 			object {
 				unterarm
+				pigment { LANGHEMD }
 				translate<0,-4,0>
 			}
 			translate <2.5,14,0>
@@ -90,13 +93,14 @@ union {
 			translate<0,4,0>
 			rotate oberschenkel_spline(clock)
 			translate<0,-4,0>
-			
+
 		}
 		object {
 			unterschenkel
 			rotate unterschenkel_spline(clock)
 			translate<0,-4,0>
 		}
+		pigment { HOSE }
 		translate <-1,8,0>
 	}
 	// linkes bein
@@ -112,9 +116,10 @@ union {
 			rotate unterschenkel_spline(clock)
 			translate<0,-4,0>
 		}
+		pigment { HOSE }
 		translate <1,8,0>
 	}
 	translate<0,-8,0>
 	rotate koerper_spline(clock)
 }
-
+#end

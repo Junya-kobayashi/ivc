@@ -14,17 +14,17 @@ spline {
 	18.99999 <-6,0,-100>
 	19.0 <-6,0,-100>
 	36.0 <-6,0,-200>
-	44.0 <-16,0,-200>
+	42.0 <-18,0,-200>
 }
 
 #declare hip1_stand =
 spline {
 	linear_spline
-	0.0 <-10,-20,-100>
+	0.0 <-6,-20,-100>
 	15.99999 <-10,-20,-100>
-	16.0 <-10,0,-100>
-	19.0 <-10,0,-100>
-	19.00001 <-10,-20,-100>
+	16.0 <-6,0,-100>
+	19.0 <-6,0,-100>
+	19.00001 <-6,-20,-100>
 }
 
 #declare hiprotate =
@@ -45,7 +45,8 @@ spline {
 	10.0 <0,2,40>
 	16.0 <0,2,-100>
 	19.0 <0,2,-100>
-	36.0 <0,2,-200>
+	36.0 <0,2,-210>
+	42.0 <-20,2,-210>
 }
 
 #declare hip2_rotate =
@@ -54,6 +55,8 @@ spline {
 	0.0 <0,0,0>
 	9.0 <0,0,0>
 	11.0 <0,90,0>
+	35.0 <0,90,0>
+	37.0 <0,0,0>
 }
 
 #declare camfahrt =
@@ -104,19 +107,30 @@ object {
 	wald
 }
 
+
+#declare HEMD = color rgb<0,1,0>;
+#declare LANGHEMD = color rgb<1,0.65,.5>;
+#declare HOSE = color rgb<0,0	,1>;
+
 object {
-	hipster_walking
+	hipster_walking(HEMD, LANGHEMD, HOSE)
 	rotate hiprotate(clock)
 	translate walking_spline(clock)
 }
+
+
 object {
-	hipster
+	hipster(HEMD, LANGHEMD, HOSE)
 	translate hip1_stand(clock)
 }
 
+#declare HEMD = color rgb<0,0,0>;
+#declare LANGHEMD = color rgb<0,0,0>;
+#declare HOSE = color rgb<1,0,1>;
+
 union {
 	object {
-		hipster
+		hipster(HEMD, LANGHEMD, HOSE)
 	}
 	object {
 		hoverboard
