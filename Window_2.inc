@@ -5,20 +5,19 @@
 //---------------------------------------------------------------------------------------------------
 #ifndef( Window_2_Inc_Temp)
 #declare Window_2_Inc_Temp = version;
-#version 3.6;
 
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------ /////////  
-#macro Window_2 (Window___Open) // 0= down closed; 1 = up opened  
+//------------------------------------------------------------------------------ /////////
+#macro Window_2 (Window___Open) // 0= down closed; 1 = up opened
 
 #if (Window___Open>1) #local Window___Open = 1; #end
 #if (Window___Open<0) #local Window___Open = 0; #end
 
 #local Windows___Glass =  //--------------------------------------------- no IOR window glass texture
       texture{ pigment{ rgbf <0.98, 0.98, 0.98, 0.9> }
-                finish { diffuse 0.1 reflection 0.2  
+                finish { diffuse 0.1 reflection 0.2
                          specular 0.8 roughness 0.0003 phong 1 phong_size 400}
                } // end of texture ------------------------------------------------------------------
 
@@ -27,14 +26,14 @@
  difference{
   box{<-0.50,0.80,-0.045>,< 0.50,1.80,0.045>}
   box{<-0.48,0.82,-0.06>,< 0.48,1.78,0.06>}
-  } // ---end of difference 
+  } // ---end of difference
 
 #local Window_2___Upper_Frame =
 union{
  difference{
   box{<-0.48,1.30,-0.02>,< 0.48,1.80,0.02>}
   box{<-0.45,1.35,-0.03>,< 0.45,1.75,0.03>}
-  } // ---end of difference 
+  } // ---end of difference
  box{<-0.47,1.33,0.0>,< 0.47,1.77,0.001>
  texture{Windows___Glass}}
  } // --- end of union -------------------
@@ -44,14 +43,14 @@ union{
  difference{
   box{<-0.48,0.80,-0.02>,< 0.48,1.305,0.02>}
   box{<-0.45,0.85,-0.03>,< 0.45,1.26,0.03>}
-  } // ---end of difference 
+  } // ---end of difference
  box{<-0.47,0.83,0.0>,< 0.47,1.27,0.001>
  texture{Windows___Glass}}
  } // --- end of union -------------------
 //-------------------------------------------------------------
 union{
 object{ Window_2___Outer_Frame }
-object{ Window_2___Upper_Frame translate<0,0,-0.02>} 
+object{ Window_2___Upper_Frame translate<0,0,-0.02>}
 object{ Window_2___Lower_Frame translate<0,Window___Open*0.50, 0.02>}
 } // --- end of union -------------------
 #end // end of macro
@@ -63,7 +62,7 @@ object{ Window_2___Lower_Frame translate<0,Window___Open*0.50, 0.02>}
 #declare Window_2_Hole =   //symmetric!!! no texture
   box{<-0.50,0.80,-0.50>,< 0.50,1.80,0.50> } // end of box -----------------------
 // --------------------------------------------------------------------------------------
-// ------------------------------------------------------// end of window hole definition 
+// ------------------------------------------------------// end of window hole definition
 
 
 
@@ -71,22 +70,22 @@ object{ Window_2___Lower_Frame translate<0,Window___Open*0.50, 0.02>}
 //---------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------
-// sample: 
+// sample:
 /*
 //---------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------- textures
-#declare Window_2_Texture = 
-   texture { // pigment{ color rgb< 0.75, 0.5, 0.30>*0.5 } // brown  
-             pigment{ color rgb<1,1,1> } 
-             finish { phong 0.1} 
+#declare Window_2_Texture =
+   texture { // pigment{ color rgb< 0.75, 0.5, 0.30>*0.5 } // brown
+             pigment{ color rgb<1,1,1> }
+             finish { phong 0.1}
            } // end of texture
 //---------------------------------------------------------------------------------------
-#include "Window_2.inc" 
-//-------------------------------------------------------------------------------------// 
-object{ Window_2 ( 0.3 ) // Window_Open: 0= down closed; 1 = up opened  
-        texture { Window_2_Texture } 
+#include "Window_2.inc"
+//-------------------------------------------------------------------------------------//
+object{ Window_2 ( 0.3 ) // Window_Open: 0= down closed; 1 = up opened
+        texture { Window_2_Texture }
         scale <1,1,1>*1
-        rotate<0,0,0> 
+        rotate<0,0,0>
         translate<0.00,0.00, 0.00>}
 
 // #declare Window_Hole = object { Window_2_Hole }

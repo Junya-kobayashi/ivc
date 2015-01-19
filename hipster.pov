@@ -1,4 +1,3 @@
-#include "colors.inc"
 #include "koerperteile.pov"
 /*camera {
     location <30,30,-30>

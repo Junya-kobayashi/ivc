@@ -2,7 +2,7 @@
 #include "welthauser.pov"
 #include "hipster_walking.pov"
 #include "hipster.pov"
-
+#include "hoverboard.pov"
 
 #declare walking_spline =
 spline {
@@ -111,9 +111,13 @@ object {
 	translate hip1_stand(clock)
 }
 
-
-object {
-	hipster
+union {
+	object {
+		hipster
+	}
+	object {
+		hoverboard
+	}
 	rotate hip2_rotate(clock)
 	translate hip2_walkling(clock)
 }

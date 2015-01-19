@@ -1,7 +1,7 @@
 #include "shapes.inc"
 #include "colors.inc"
 #include "textures.inc"
-global_settings { charset utf8 }
+
 // sky -------------------------------------
 plane{ <0,1,0>,1 hollow
        texture{
@@ -36,7 +36,7 @@ plane{ <0,1,0>, 0
        } // end of texture
        translate<0,-0.1,0>
      } // end of plane
-     
+
 //------------------------------------------
 
 light_source { <100,300,-300> color White }

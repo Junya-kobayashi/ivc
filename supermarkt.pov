@@ -1,6 +1,3 @@
-#include "colors.inc"
-#include "textures.inc"
-#include "shapes.inc"
 #include "rakete.pov"
 
 /*camera

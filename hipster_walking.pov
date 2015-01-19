@@ -1,4 +1,3 @@
-#include "colors.inc"
 #include "koerperteile.pov"
 
 /*camera {
@@ -8,7 +7,7 @@
 }
 light_source { < 10,30,-30> color White }
 */
-#declare hipster_walking = 
+#declare hipster_walking =
 union {
     //head
 	object {

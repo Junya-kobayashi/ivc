@@ -1,4 +1,3 @@
-#include "colors.inc"
 #include "shapes3.inc"
 
 #declare HAUT = color rgb<1,0.65,0.50>;

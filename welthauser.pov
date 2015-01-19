@@ -1,7 +1,13 @@
-#include "colors.inc"
-#include "textures.inc"
 #include "supermarkt.pov"
 #include "hipster_haus.pov"
+
+#include "povtree/linden.inc"
+#include "povtree/TOMTREE-1.5.inc"
+
+#include "House_1_0.inc"
+#include "House_2_0.inc"
+
+#include "Street_10.inc"
 
 #declare hip_wohnung =
 object {
@@ -11,7 +17,7 @@ object {
 	translate<50,0,20>
 }
 
-#include "House_1_0.inc"
+
 
 #declare Wall_Texture_Outside =
       texture { pigment{ color White*1.1}
@@ -61,7 +67,7 @@ object{ House_1_0(  2.50, // Half_House_Width_X, // >= 2.00
 
         }
 
-        #include "House_2_0.inc"
+
 //-------------------------------------------------------------------------------------//
 #declare haus2 =
 object{ House_2_0(  2.50, // Half_House_Width_X, // >= 2.00
@@ -79,26 +85,28 @@ object{ House_2_0(  2.50, // Half_House_Width_X, // >= 2.00
         translate<-20.00,0.00, 10.00>}
 
 
-#include "povtree/linden.inc"
-#include "povtree/TOMTREE-1.5.inc"
 //-------------------------------------------------------------
-#declare Tree_01 = object{ TREE double_illuminate hollow}
+#declare Tree_01 = object {
+	TREE
+	double_illuminate
+	hollow
+}
 //-------------------------------------------------------------
 #declare i = 2;
-
 #declare wald =
 union {
 #while (i < 12)
-#declare j = 2;
-#while (j < 8)
-object{ Tree_01
-        scale  40
-        rotate<0,0,0>
-        translate<15*j, 0.00,-20*i>
-}
-#declare j = j+1;
-#end
-#declare i = i+1;
+	object{ Tree_01
+	        scale  40
+	        rotate<0,0,0>
+	        translate<30, 0.00,-20*i>
+	}
+	object{ Tree_01
+		scale  40
+		rotate<0,90,0>
+		translate<40, 0.00,-20*i>
+	}
+	#declare i = i+1;
 #end
 }
 
@@ -146,7 +154,7 @@ object{ Tree_01
                   finish { phong 0.0}}
 //----------------------------------------------------------------------------------------
 #//---------------------------------------------------------------------------------------
-#include "House_35_0.inc"
+
 //-------------------------------------------------------------------------------------//
 #declare emma =
 object {
@@ -156,7 +164,7 @@ object {
 }
 
 
-#include "Street_10.inc"
+
 #declare strasse1 =
 object{ Street_10( 20,     // Street_Widthm, //
 				   1000, // Street_Length, //
