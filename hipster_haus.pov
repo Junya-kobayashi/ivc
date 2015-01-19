@@ -1,6 +1,3 @@
-#version 3.7;
-global_settings{assumed_gamma 1.0}
-#default{ finish{ ambient 0.1 diffuse 0.9 }}
 //------------------------------------------
 #include "colors.inc"
 #include "textures.inc"
@@ -63,7 +60,7 @@ object{ House_1_0(  2.50, // Half_House_Width_X, // >= 2.00
                    ) //----------------------------------------------------------------//
         scale <1,1,1>*10
         rotate<0,90,0> 
-        translate<-25.00,0.00, 0.00>}
+        translate<0.00,-5.00, 20.00>}
 }
 
 

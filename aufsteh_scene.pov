@@ -1,12 +1,12 @@
 #include "world.pov"
-#include "hipster_wohnung.pov"
+#include "hipster_haus.pov"
 #include "hipster_aufstehen.pov"
 #include "hipster_walking.pov"
 
 camera{ 
-	// location  <40 ,15 ,0>
-    // look_at   <0 , 10 ,45>
-	location  <0 ,15 ,-60>	
+	 location  <20 ,10 ,0>
+     look_at   <0 , 10 ,10>
+	//location  <0 ,15 ,-60>	
     right x*image_width/image_height // so wegen 16:9
     angle 90 
 }

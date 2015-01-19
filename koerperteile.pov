@@ -181,7 +181,7 @@ object{ Pyramid_N( 6,
 union {
   object {
     simpbobbel
-    rotate<0,clock*360,0>
+    rotate<0,clock*45,0>
     translate<0,18,0>
   }
 
