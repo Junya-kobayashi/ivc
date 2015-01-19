@@ -56,7 +56,6 @@ spline {
 	1.2 <0,320,0>
 	1.45 <0,0,0>
 }
-
 #declare haus2_spline =
 spline {
 	linear_spline
