@@ -97,9 +97,9 @@ object {
 object {
 	emma
 }
-object {
+/*object {
 	wald
-}
+}*/
 
 object {
 	hipster_walking

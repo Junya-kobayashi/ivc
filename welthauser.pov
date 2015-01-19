@@ -80,8 +80,6 @@ object{ House_2_0(  2.50, // Half_House_Width_X, // >= 2.00
 
 
 #include "povtree/linden.inc"
-
-
 #include "povtree/TOMTREE-1.5.inc"
 //-------------------------------------------------------------
 #declare Tree_01 = object{ TREE double_illuminate hollow}
@@ -95,7 +93,7 @@ union {
 #while (j < 8)
 object{ Tree_01
         scale  40
-        rotate<0, 0,0>
+        rotate<0,0,0>
         translate<15*j, 0.00,-20*i>
 }
 #declare j = j+1;
