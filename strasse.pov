@@ -10,6 +10,7 @@ spline {
 	0.5 <0,30,-145>
 	1.0 <0,10,10>
 }
+
 #declare camlook =
 spline {
 	linear_spline
