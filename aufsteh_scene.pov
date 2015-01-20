@@ -10,7 +10,6 @@ camera{
     right x*image_width/image_height // so wegen 16:9
     angle 75
 }
-
 #declare hipster1 =
 spline {
 	linear_spline
