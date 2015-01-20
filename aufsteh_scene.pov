@@ -11,7 +11,6 @@ camera{
     angle 75
 }
 
-
 #declare hipster1 =
 spline {
 	linear_spline
