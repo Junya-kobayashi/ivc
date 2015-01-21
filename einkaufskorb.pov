@@ -1,5 +1,5 @@
 #include "colors.inc"
-
+/*
 camera{
   location  <0 ,30, -30>
   look_at   <0 , 0 ,0>
@@ -8,7 +8,7 @@ camera{
 }
 
 light_source { <0, 20, -20> color White }
-
+*/
 #declare einkaufskorb =
 union {
   difference {
@@ -53,17 +53,17 @@ union {
 
   box {
     <0,0,0> <.2,7,1>
-    texture { pigment { color Black } }
+    texture { pigment { color Gray } }
     translate<-.2,9,9.5>
   }
   box {
     <0,0,0> <12.4,.2,1>
-    texture { pigment { color Black } }
+    texture { pigment { color Gray } }
     translate<0,15.8,9.5>
   }
   box {
     <0,0,0> <.2,7,1>
-    texture { pigment { color Black } }
+    texture { pigment { color Gray } }
     translate<12.2,9,9.5>
   }
 
