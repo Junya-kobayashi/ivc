@@ -63,27 +63,37 @@ texture {
 		phong_size 400}
 }
 
+#local obstbild =
+object {
+	box{
+		<0,0,0>, <1,1,1>
+		pigment {color White}
+		//rotate <0,0,320> translate <0,13,5>
+		texture{ pigment { image_map
+		{
+			bmp "obst.bmp"
+			map_type 0 //type für plane/box
+			once //gif wird in der Fläche nicht wiederholt
+		}
+	}
+}
+}
+scale<22,15,0>
+rotate<320,90,0>
+translate<10,5,15>
+}
+
 #local obststand =
 union
 {
-	object {
-		box{
-			<0,0,0>, <1,1,80>
-			pigment{color White}
-			rotate <0,0,320>
-			translate <0,13,5>
-			texture {
-				pigment { image_map {
-					bmp "obst.bmp"
-					map_type 0 //type für plane/box
-					once //gif wird in der Fläche nicht wiederholt
-				}
-				scale<0.02,0,0.025>
-			}
-			}
+	#local i = 0;
+	#while (i < 4)
+		object {
+			obstbild
+			translate<0,0,22*i>
 		}
-	}
-
+		#local i = i+1;
+	#end
 	object {
 		box{
 			<0,0,0>, <15,5,75>
