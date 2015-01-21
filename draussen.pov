@@ -17,6 +17,7 @@ spline {
 	42.0 <-18,0,-200>
 }
 
+
 #declare hip1_stand =
 spline {
 	linear_spline
