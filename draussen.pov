@@ -38,6 +38,7 @@ spline {
 	37.0 <0,90,0>
 }
 
+
 #declare hip2_walkling =
 spline {
 	linear_spline
