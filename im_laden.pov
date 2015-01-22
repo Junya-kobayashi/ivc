@@ -34,6 +34,7 @@ spline {
   17.0 <115,0,47.5>
 }
 
+
 #declare hipster_rotate =
 spline {
   linear_spline
