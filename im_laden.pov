@@ -1,17 +1,16 @@
-#include "colors.inc"
-#include "textures.inc"
+#include "world.pov"
 #include "supermarkt.pov"
 #include "hipster.pov"
 #include "rand.inc"
 
 camera{
-  location <40,20,45>
-  look_at <130,20,45>
+  location <50,20,30>
+  look_at <40,10,0>
   right x*image_width/image_height // so wegen 16:9
-  angle 75
+  angle 90
 }
 
-light_source { <10, 20, -20> color White }
+//light_source { <10, 20, -20> color White }
 
 object {
   supermarkt_komplett

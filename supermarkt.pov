@@ -39,7 +39,7 @@ union{
 #local licht =
 light_source{
 	<0,0,0>
-	color rgb<1,1,1>
+	color rgb<1,.7,1>
 	area_light
 	<0, 0, 0> <2, 0, 0>
 	1,10 // numbers in directions

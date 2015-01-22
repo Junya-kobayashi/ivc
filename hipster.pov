@@ -17,6 +17,7 @@ union {
 	}
 	object {
 		koerper
+		pigment { HEMD }
 	}
 	// rechter arm
 	union {
