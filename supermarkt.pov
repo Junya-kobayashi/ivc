@@ -374,6 +374,16 @@ union {
 		pigment { color White }
 		translate<0,0,80>
 	}
+	box{
+		<0,0,0>, <15,30,5>
+		pigment{ color White }
+		translate<135,0,0>
+	}
+	box{
+		<0,0,0>, <15,30,5>
+		pigment { color White }
+		translate<135,0,80>
+	}
 	difference {
 		object {
 			box {
@@ -449,11 +459,11 @@ union {
 union {
 	object {
 		kasse
-		translate<70,0,10>
+		translate<65,0,10>
 	}
 	object {
 		kasse
-		translate<80,0,35>
+		translate<70,0,35>
 	}
 }
 
@@ -477,6 +487,11 @@ union {
 	object {
 		obststand
 	}
+	object {
+		obststand
+		rotate<0,180,0>
+		translate<150,0,85>
+	}
 
 	object {
 		schrankmodul
@@ -492,6 +507,10 @@ union {
 	object {
 		schrankmodul
 		translate<72,0,0>
+	}
+	object {
+		schrankmodul
+		translate<96,0,0>
 	}
 
 	object {
