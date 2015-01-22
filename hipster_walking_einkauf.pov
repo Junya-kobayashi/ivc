@@ -97,12 +97,5 @@ union {
 #end
 
 /*
-#declare HEMD = color rgb<0,1,0>;
-#declare LANGHEMD = color rgb<1,0.65,.5>;
-#declare HOSE = color rgb<0,0	,1>;
 
-object {
-  hipster_walking(HEMD, LANGHEMD, HOSE)
-
-}
 */
